@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sudheer Reddy | CSE-DS Student</title>
+
+    <meta name="description"
+          content="Portfolio of Sudheer Reddy, a second-year CSE-DS student at Sreenidhi Institute of Science and Technology.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f19;
+            color: #f5f7fa;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.95);
+            border-bottom: 1px solid #222a3a;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #6ea8fe;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #c8ced9;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #6ea8fe;
+        }
+
+        /* Common */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .section-title span {
+            color: #6ea8fe;
+        }
+
+        /* Hero */
+        #home {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero {
+            max-width: 1100px;
+            margin: auto;
+            padding: 50px 25px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #6ea8fe;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            color: #c8ced9;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: #aeb6c5;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 8px;
+            border: 1px solid #6ea8fe;
+            color: #6ea8fe;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #6ea8fe;
+            color: #0b0f19;
+        }
+
+        .btn-primary {
+            background: #6ea8fe;
+            color: #0b0f19;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: #6ea8fe;
+        }
+
+        /* About */
+        .about-card {
+            background: #111827;
+            border: 1px solid #222a3a;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .about-card p {
+            color: #b7bfcc;
+            margin-bottom: 15px;
+        }
+
+        /* Skills */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+        }
+
+        .skill {
+            background: #111827;
+            border: 1px solid #222a3a;
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            border-color: #6ea8fe;
+        }
+
+        .skill h3 {
+            margin-bottom: 5px;
+        }
+
+        .skill p {
+            color: #9ca7b8;
+            font-size: 14px;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #111827;
+            border: 1px solid #222a3a;
+            border-radius: 15px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #6ea8fe;
+        }
+
+        .project-card h3 {
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .project-subtitle {
+            color: #6ea8fe;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #b7bfcc;
+            margin-bottom: 18px;
+        }
+
+        .project-card ul {
+            padding-left: 20px;
+            color: #b7bfcc;
+            margin-bottom: 20px;
+        }
+
+        .project-card li {
+            margin-bottom: 7px;
+        }
+
+        .private-label {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 6px;
+            background: #1c2433;
+            color: #aeb6c5;
+            font-size: 13px;
+        }
+
+        /* Education */
+        .education-card {
+            background: #111827;
+            border: 1px solid #222a3a;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .education-card h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .education-card h4 {
+            color: #6ea8fe;
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            color: #b7bfcc;
+        }
+
+        /* Contact */
+        .contact-card {
+            text-align: center;
+            background: #111827;
+            border: 1px solid #222a3a;
+            border-radius: 15px;
+            padding: 40px 25px;
+        }
+
+        .contact-card p {
+            color: #b7bfcc;
+            margin-bottom: 25px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #222a3a;
+            color: #8f99a9;
+            font-size: 14px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Sudheer<span>.</span></div>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Hero -->
+    <section id="home">
+        <div class="hero">
+
+            <h1>Hi, I'm <span>Sudheer Reddy</span></h1>
+
+            <h2>2nd Year CSE-DS Student</h2>
+
+            <p>
+                I'm a Computer Science and Engineering – Data Science student
+                at Sreenidhi Institute of Science and Technology, interested in
+                software development, problem solving and building useful
+                technology projects.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">
+                    View My Projects
+                </a>
+
+                <a href="https://github.com/nsudheerreddy"
+                   target="_blank"
+                   class="btn">
+                    GitHub
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+
+            <h2 class="section-title">
+                About <span>Me</span>
+            </h2>
+
+            <div class="about-card">
+
+                <p>
+                    I'm <strong>Sudheer Reddy</strong>, a second-year
+                    B.Tech student specializing in
+                    <strong>Computer Science and Engineering – Data Science
+                    (CSE-DS)</strong>.
+                </p>
+
+                <p>
+                    I enjoy learning programming, developing web applications,
+                    and exploring how technology can be used to solve
+                    real-world problems.
+                </p>
+
+                <p>
+                    Currently, I'm building my skills in Java, HTML, CSS and
+                    JavaScript while working on projects that help me gain
+                    practical development experience.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+
+            <h2 class="section-title">
+                My <span>Skills</span>
+            </h2>
+
+            <div class="skills">
+
+                <div class="skill">
+                    <h3>Java</h3>
+                    <p>Programming & Problem Solving</p>
+                </div>
+
+                <div class="skill">
+                    <h3>HTML</h3>
+                    <p>Web Structure</p>
+                </div>
+
+                <div class="skill">
+                    <h3>CSS</h3>
+                    <p>Web Styling & Responsive Design</p>
+                </div>
+
+                <div class="skill">
+                    <h3>JavaScript</h3>
+                    <p>Web Interactivity</p>
+                </div>
+
+                <div class="skill">
+                    <h3>Git</h3>
+                    <p>Version Control</p>
+                </div>
+
+                <div class="skill">
+                    <h3>GitHub</h3>
+                    <p>Code Hosting & Collaboration</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+
+            <h2 class="section-title">
+                My <span>Projects</span>
+            </h2>
+
+            <div class="projects">
+
+                <!-- PathNexa -->
+                <div class="project-card">
+
+                    <h3>PathNexa</h3>
+
+                    <div class="project-subtitle">
+                        AI-Powered Career Path & Goal Guidance Platform
+                    </div>
+
+                    <p>
+                        PathNexa is an AI-powered platform designed to help
+                        users turn their career goals into a clear, actionable
+                        path. It analyzes user goals and provides personalized
+                        guidance, recommended steps, and relevant resources to
+                        help users progress toward their desired career.
+                    </p>
+
+                    <ul>
+                        <li>Goal-based career guidance</li>
+                        <li>AI-powered analysis</li>
+                        <li>Personalized career roadmaps</li>
+                        <li>Recommended learning resources</li>
+                        <li>Step-by-step career guidance</li>
+                    </ul>
+
+                    <span class="private-label">
+                        🔒 GitHub Repository: Private
+                    </span>
+
+                </div>
+
+
+                <!-- More Projects -->
+                <div class="project-card">
+
+                    <h3>More Projects</h3>
+
+                    <div class="project-subtitle">
+                        Coming Soon
+                    </div>
+
+                    <p>
+                        I'm continuously working on new projects to improve
+                        my programming, development and problem-solving skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Education -->
+    <section id="education">
+        <div class="container">
+
+            <h2 class="section-title">
+                <span>Education</span>
+            </h2>
+
+            <div class="education-card">
+
+                <h3>Bachelor of Technology (B.Tech)</h3>
+
+                <h4>
+                    Computer Science and Engineering – Data Science
+                </h4>
+
+                <p>
+                    <strong>Sreenidhi Institute of Science and Technology</strong>
+                </p>
+
+                <p>
+                    2nd Year • Expected Graduation: 2029
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+
+            <h2 class="section-title">
+                Contact <span>Me</span>
+            </h2>
+
+            <div class="contact-card">
+
+                <p>
+                    Interested in connecting, collaborating or discussing
+                    technology and projects?
+                </p>
+
+                <div class="buttons" style="justify-content:center;">
+
+                    <a href="https://github.com/nsudheerreddy"
+                       target="_blank"
+                       class="btn btn-primary">
+                        GitHub
+                    </a>
+
+                    <!-- Add your LinkedIn URL here when available -->
+                    <a href="#"
+                       class="btn"
+                       onclick="alert('LinkedIn profile will be added soon.'); return false;">
+                        LinkedIn
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        © 2026 Sudheer Reddy. Built with HTML & CSS.
+    </footer>
+
+</body>
+</html>
